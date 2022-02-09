@@ -31,7 +31,7 @@ void edmond_karp(ll source, ll sink) {
 		if (cache[sink] == -1)break;
 		max_flow += 1;
 		for (ll i = sink; i != source; i = cache[i]) {
-			if (i < n)curans.push_back(i);
+			if (i <= n)curans.push_back(i);
 			ll bef = cache[i];
 			flow[bef][i] = true;
 			flow[i][bef] = false;
