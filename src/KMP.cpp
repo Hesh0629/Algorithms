@@ -8,8 +8,8 @@
 */
 
 for (int i = 1, j = 0; i < p.size(); i++) {
-		while (j > 0 && p[i] != p[j])j = fail[j - 1];
-		if (p[i] == p[j])fail[i] = ++j;
+	while (j > 0 && p[i] != p[j])j = fail[j - 1];
+	if (p[i] == p[j])fail[i] = ++j;
 }
 
 /*
@@ -18,12 +18,12 @@ for (int i = 1, j = 0; i < p.size(); i++) {
 */
 
 for (int i = 0, j = 0; i < t.size(); i++) {
-		while (j > 0 && t[i] != p[j])j = fail[j - 1]; // 일치하지 않는다면 이전 위치에서 현재 문자열의 접미사와 최대로 일치하는 패턴의 접두사 다음 위치로 이동
-		if (t[i] == p[j]) {
-			if (j == p.size() - 1) {
-				ans.push_back(i - p.size() + 2);
-				j = fail[j];
-			}
-			else j++;
+	while (j > 0 && t[i] != p[j])j = fail[j - 1]; // 일치하지 않는다면 이전 위치에서 현재 문자열의 접미사와 최대로 일치하는 패턴의 접두사 다음 위치로 이동
+	if (t[i] == p[j]) {
+		if (j == p.size() - 1) {
+			ans.push_back(i - p.size() + 2);
+			j = fail[j];
 		}
+		else j++;
+	}
 }
