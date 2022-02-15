@@ -16,6 +16,7 @@ void update_lazy(ll N, ll l, ll r) {
 	if (!lazy[N])return;
 	segtree[N] += (r - l + 1) * lazy[N];
 	if (l != r) {
+		// 여기서 segtree에다가 더하는 실수하지말자 (이걸로 2시간 날려먹음)
 		lazy[2 * N] += lazy[N];
 		lazy[2 * N + 1] += lazy[N];
 	}
